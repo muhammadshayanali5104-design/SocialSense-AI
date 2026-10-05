@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="predict-container">
+
+    <!-- LEFT SIDE -->
+
+    <div class="left-side">
+
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
+
+        <h2>AI Addiction Analysis</h2>
+
+        <p>
+            Machine learning based system that predicts
+            social media addiction levels using behavioral data.
+        </p>
+
+        <div class="mini-cards">
+
+            <div class="mini-card">
+                <h3>89%</h3>
+                <p>Students Active Daily</p>
+            </div>
+
+            <div class="mini-card">
+                <h3>6.5 Hrs</h3>
+                <p>Average Usage</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- RIGHT SIDE -->
+
+    <div class="right-side">
+
+        <h1>Predict Addiction Score</h1>
+
+        <form action="/predict" method="POST">
+
+            <input type="number" name="age" placeholder="Age" required>
+
+            <input type="number" step="0.1" name="usage" placeholder="Daily Usage Hours">
+
+            <input type="number" step="0.1" name="sleep" placeholder="Sleep Hours">
+
+            <input type="number" name="mental" placeholder="Mental Health Score">
+
+            <button type="submit">Predict Now</button>
+
+        </form>
+
+        {% if prediction_text %}
+
+        <div class="result-card">
+
+            <h2>Addiction Score</h2>
+
+            <div class="score">
+                {{ prediction_text }}
+            </div>
+
+            <h3>{{ addiction_level }}</h3>
+
+            <p>{{ advice }}</p>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</div>
+
+</body>
+</html>

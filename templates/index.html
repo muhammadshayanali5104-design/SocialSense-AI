@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SocialSense AI</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav>
+
+        <div class="logo">
+            SocialSense AI
+        </div>
+
+        <ul>
+            <li>Home</li>
+            <li>Analytics</li>
+            <li>Prediction</li>
+            <li>About</li>
+        </ul>
+
+    </nav>
+
+    <!-- HERO SECTION -->
+
+    <section class="hero">
+
+        <div class="hero-left">
+
+            <h1>
+                AI Powered <span>Social Media Addiction</span> Analysis
+            </h1>
+
+            <p>
+                Analyze student social media addiction using Machine Learning
+                and AI powered prediction systems.
+            </p>
+
+            <a href="/predict-page">
+                <button>
+                    Predict Now
+                </button>
+            </a>
+
+        </div>
+
+        <div class="hero-right">
+
+            <img src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png">
+
+        </div>
+
+    </section>
+
+    <!-- CARDS -->
+
+    <section class="cards">
+
+        <div class="card">
+            <h2>89%</h2>
+            <p>Students Use Social Media Daily</p>
+        </div>
+
+        <div class="card">
+            <h2>6.5 Hrs</h2>
+            <p>Average Usage Time</p>
+        </div>
+
+        <div class="card">
+            <h2>73%</h2>
+            <p>Academic Performance Affected</p>
+        </div>
+
+    </section>
+
+    <!-- GRAPH SECTION -->
+
+    <section class="graph-section">
+
+        <div class="graph-card">
+
+            <canvas id="myChart"></canvas>
+
+        </div>
+
+    </section>
+
+    <!-- ABOUT -->
+
+    <section class="about">
+
+        <h1>About Project</h1>
+
+        <p>
+            This AI based project predicts social media addiction levels
+            using machine learning algorithms based on student behavior,
+            sleep patterns, mental health score and daily usage habits.
+        </p>
+
+    </section>
+
+<script>
+
+const ctx = document.getElementById('myChart');
+
+new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Instagram', 'TikTok', 'Facebook', 'YouTube'],
+        datasets: [{
+            label: 'Usage Percentage',
+            data: [90, 80, 50, 70],
+            borderWidth: 1
+        }]
+    },
+
+    options: {
+        responsive: true
+    }
+});
+
+</script>
+
+</body>
+</html>
